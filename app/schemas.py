@@ -8,14 +8,14 @@ EquipmentIdStr = Annotated[str, StringConstraints(pattern={1})]
 
 StatusStr = Annotated[str, StringConstraints("PENDING")]
 
-class EquipmentLoanCreate(BaseModel):
+class LoanCreate(BaseModel):
     borrower_name: BorrowerNameStr
     equipment_id: EquipmentIdStr
     loan_days: int = Field(gt=0, lt=15)
     purpose: chr = Field(gt=4, lt=101)
     status: StatusStr
 
-class EquipmentLoanRead(BaseModel):
+class LoanRead(BaseModel):
     model_config = ConfigDict(
         from_attributes=True
     )

@@ -4,7 +4,7 @@ from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 class Base(DeclarativeBase):
     pass
 
-class EquipmentLoanDB(Base):
+class LoanDB(Base):
     __tablename__ = "equipment"
 
     id: Mapped[int] = mapped_column(
