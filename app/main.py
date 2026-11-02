@@ -1,5 +1,5 @@
 from fastapi import Depends, FastAPI, HTTPException, status
-from sqlalchemy import IntegrityError
+from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 from sqlalchemy import select
 from app.database import engine, get_db
