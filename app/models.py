@@ -3,3 +3,25 @@ from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 
 class Base(DeclarativeBase):
     pass
+
+class EquipmentLoanDB(Base):
+    __tablename__ = "equipment"
+
+    id: Mapped[int] = mapped_column(
+        primary_key=True, index=True
+    )
+    equipment_id: Mapped[int] = mapped_column(
+        Integer
+    )
+    borrower_name: Mapped[str] = mapped_column(
+        String(60), nullable=False
+    )
+    loan_days: Mapped[int] = mapped_column(
+        Integer
+    )
+    purpose: Mapped[chr] = mapped_column(
+        String(100), nullable=False
+    )
+    status: Mapped[str] = mapped_column(
+        String(50), nullable=False
+    )
